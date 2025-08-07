@@ -29,6 +29,6 @@ This is a simple web application built with React, showcasing a collection of fu
 
 ```bash
 git clone https://github.com/dyoungky/FermLiving.git
-cd ITU-Name
 npm install
 npm start
+
