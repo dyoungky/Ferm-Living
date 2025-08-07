@@ -1,11 +1,11 @@
-import { Container } from 'react-bootstrap';
-import Carousel from 'react-bootstrap/Carousel';
-import { useState } from 'react';
-import axios from 'axios';
-import Item from './Item';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown, faArrowUp, faCaretDown } from '@fortawesome/free-solid-svg-icons';
-import DarkVariantExample from './DarkVariantExample';
+import { Container } from "react-bootstrap";
+import Carousel from "react-bootstrap/Carousel";
+import { useState } from "react";
+import axios from "axios";
+import Item from "./Item";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDown, faArrowUp, faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import DarkVariantExample from "./DarkVariantExample";
 
 const Home = (props) => {
   const [count, setCount] = useState(1);
@@ -13,13 +13,13 @@ const Home = (props) => {
 
   return (
     <>
-      <div className='main-bg'></div>
+      <div className="main-bg"></div>
       <Container>
         {/* Order button */}
-        <div className='orderBtn'>
+        <div className="orderBtn">
           <button
-            className='button'
-            type='button'
+            className="button"
+            type="button"
             onClick={() => {
               let copy = [...props.items];
               copy.sort((a, b) => {
@@ -31,8 +31,8 @@ const Home = (props) => {
             A to Z <FontAwesomeIcon icon={faArrowDown} />
           </button>
           <button
-            className='button'
-            type='button'
+            className="button"
+            type="button"
             onClick={() => {
               let copy = [...props.items];
               copy.sort((a, b) => {
@@ -44,8 +44,8 @@ const Home = (props) => {
             Z to A <FontAwesomeIcon icon={faArrowUp} />
           </button>
           <button
-            className='button'
-            type='button'
+            className="button"
+            type="button"
             onClick={() => {
               let copy = [...props.items];
               copy.sort((a, b) => {
@@ -57,8 +57,8 @@ const Home = (props) => {
             Highest price <FontAwesomeIcon icon={faArrowDown} />
           </button>
           <button
-            className='button'
-            type='button'
+            className="button"
+            type="button"
             onClick={() => {
               let copy = [...props.items];
               copy.sort((a, b) => {
@@ -72,17 +72,17 @@ const Home = (props) => {
         </div>
 
         {/* Items at Main page */}
-        <div className='items'>
+        <div className="items">
           {props.items.map((item, i) => {
             return <Item items={props.items[i]} key={i} />;
           })}
         </div>
 
-        <div style={{ textAlign: 'center' }}>
+        <div style={{ textAlign: "center" }}>
           {/* Loading */}
           {loading == true ? (
-            <div style={{ marginBottom: '1px' }}>
-              <div className='lds-ellipsis'>
+            <div style={{ marginBottom: "1px" }}>
+              <div className="lds-ellipsis">
                 <div></div>
                 <div></div>
                 <div></div>
@@ -94,12 +94,12 @@ const Home = (props) => {
           {/* Show more button  */}
           {count < 3 ? (
             <button
-              className='more'
+              className="more"
               onClick={() => {
                 setLoading(true);
                 setTimeout(() => {
                   axios
-                    .get('./data' + (count + 1) + '.json')
+                    .get("./data" + (count + 1) + ".json")
                     .then((result) => {
                       let copy = [...props.items, ...result.data];
                       props.setItems(copy);
@@ -107,7 +107,7 @@ const Home = (props) => {
                       setLoading(false);
                     })
                     .catch(() => {
-                      console.log('error');
+                      console.log("error");
                     });
                 }, 2000);
               }}
@@ -118,12 +118,12 @@ const Home = (props) => {
         </div>
       </Container>
 
-      <section className='bottom'>
-        <h5 className='bottom-title'>
+      <section className="bottom">
+        <h5 className="bottom-title">
           FERM LIVING using <span>React</span>
         </h5>
-        <h5 className='bottom-dy'>
-          <a href='https://dyoungky.dk/' target='_blank' rel='noreferrer'>
+        <h5 className="bottom-dy">
+          <a href="https://dyoungky.dk/" target="_blank" rel="noreferrer">
             dyoungky.dk
           </a>
         </h5>

@@ -36,7 +36,7 @@ a {
 
 .main-bg {
   height: 700px;
-  background-image: url(./main-bg.jpg);
+  background-image: url("https://fermliving.dk/cdn/shop/files/Hero_8c9ff08f-3882-494f-b1d7-351079a4b65b.jpg?v=1754467597&width=1920");
   background-size: cover;
   background-position: center;
 }
